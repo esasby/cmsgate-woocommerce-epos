@@ -1,0 +1,36 @@
+{
+  "name": "esas/cmsgate-woocommerce-epos",
+  "description": "Wordpress Woocommerce to EPOS integration library",
+  "keywords": [
+    "cmsgate",
+    "epos",
+    "payment gateway",
+    "woo",
+    "woocommerce",
+    "wordpress",
+    "api"
+  ],
+  "require": {
+    "php": ">= 5.6.0",
+    "esas/cmsgate-epos-lib": "v1.0.0",
+    "esas/cmsgate-woocommerce-lib": "v1.2.0",
+    "ext-openssl": "*",
+    "ext-curl": "*"
+  },
+  "authors": [
+    {
+      "name": "esas",
+      "email": "info@esas.by",
+      "homepage": "https://esas.by"
+    }
+  ],
+  "config": {
+    "vendor-dir": "src/woo-hutkigrosh-gateway/vendor"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Esas\\Hutkigrosh\\": ""
+    }
+  }
+}

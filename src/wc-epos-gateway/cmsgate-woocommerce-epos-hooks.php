@@ -4,13 +4,13 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 /*
-Plugin Name: WooCommerce EPOS Gateway
+Plugin Name: WC EPOS Gateway
 Plugin URI: https://bitbucket.esas.by/projects/CG/repos/cmsgate-woocommerce-epos/browse
-Description: Модуль для выставления счетов в систему ЕРИП через сервис Epos
+Description: Модуль для выставления счетов в систему ЕРИП через сервис EPOS
 Version: 1.0.0
 Author: ESAS
 Author Email: n.mekh@hutkigrosh.by
-Text Domain: woocommerce-epos-payments
+Text Domain: wc-epos-gateway
 WC requires at least: 3.0.0
 WC tested up to: 4.0.1
 */

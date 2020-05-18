@@ -9,18 +9,22 @@
 namespace esas\cmsgate\epos;
 
 
-use esas\cmsgate\lang\LocaleLoaderWoo;
-use esas\cmsgate\epos\lang\TranslatorEpos;
+use esas\cmsgate\CmsConnectorWoo;
 use esas\cmsgate\view\admin\AdminViewFields;
 use esas\cmsgate\view\admin\ConfigFormWoo;
-use esas\cmsgate\epos\view\admin\ManagedFieldsEpos;
-use esas\cmsgate\wrappers\OrderWrapperFactoryWoo;
 use esas\cmsgate\epos\view\client\CompletionPanelWoo;
-use esas\cmsgate\epos\wrappers\ConfigWrapperEposWoo;
-use WP_Post;
 
 class RegistryEposWoo extends RegistryEpos
 {
+    /**
+     * RegistryHutkigroshWoo constructor.
+     */
+    public function __construct()
+    {
+        $this->cmsConnector = new CmsConnectorWoo();
+        $this->paysystemConnector = new PaysystemConnectorEpos();
+    }
+
     /**
      * Переопделение для упрощения типизации
      * @return RegistryEposWoo
@@ -30,27 +34,9 @@ class RegistryEposWoo extends RegistryEpos
         return parent::getRegistry();
     }
 
-    /**
-     * @return TranslatorEpos
-     */
-    public function createTranslator()
-    {
-        $localeLoader = new LocaleLoaderWoo();
-        return new TranslatorEpos($localeLoader);
-    }
-
-    /**
-     * @return OrderWrapperFactoryWoo
-     */
-    public function createOrderWrapperFactory()
-    {
-        return new OrderWrapperFactoryWoo();
-    }
-
     public function createConfigForm()
     {
-        $managedFields = new ManagedFieldsEpos();
-        $managedFields->addAllExcept([ConfigFieldsEpos::shopName()]);
+        $managedFields = $this->getManagedFieldsFactory()->getManagedFieldsExcept(AdminViewFields::CONFIG_FORM_COMMON, [ConfigFieldsEpos::shopName()]);
         $configForm = new ConfigFormWoo(
             AdminViewFields::CONFIG_FORM_COMMON,
             $managedFields
@@ -65,9 +51,9 @@ class RegistryEposWoo extends RegistryEpos
         return $completionPanel;
     }
 
-    public function createConfigWrapper()
+    function getUrlWebpay($orderId)
     {
-        return new ConfigWrapperEposWoo();
+        $order = wc_get_order($orderId);
+        return $order->get_checkout_order_received_url();
     }
-
 }

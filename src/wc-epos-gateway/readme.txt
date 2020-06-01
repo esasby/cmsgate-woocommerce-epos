@@ -1,7 +1,7 @@
 === WC EPOS Gateway ===
 Contributors: nmekh
 Tags: commerce, woocommerce, epos, shopping, gateway, erip, woo, wc
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Requires at least: 4.6
 Tested up to: 5.4
 Requires PHP: 5.5
@@ -20,3 +20,5 @@ After invoicing you clients will be available for payment by a plastic card and 
 1. Use the Woocommerce->Settings->Payments screen to configure the plugin
 
 == Changelog ==
+= 1.1.1 =
+* Bug fix: enable/disable checkbox in module settings

@@ -10,6 +10,9 @@ namespace esas\cmsgate\epos;
 
 
 use esas\cmsgate\CmsConnectorWoo;
+use esas\cmsgate\descriptors\ModuleDescriptor;
+use esas\cmsgate\descriptors\VendorDescriptor;
+use esas\cmsgate\descriptors\VersionDescriptor;
 use esas\cmsgate\view\admin\AdminViewFields;
 use esas\cmsgate\view\admin\ConfigFormWoo;
 use esas\cmsgate\epos\view\client\CompletionPanelWoo;
@@ -55,5 +58,17 @@ class RegistryEposWoo extends RegistryEpos
     {
         $order = wc_get_order($orderId);
         return $order->get_checkout_order_received_url();
+    }
+
+    public function createModuleDescriptor()
+    {
+        return new ModuleDescriptor(
+            "epos",
+            new VersionDescriptor("1.10.0", "2020-06-04"),
+            "Прием платежей через ЕРИП (сервис EPOS)",
+            "https://bitbucket.esas.by/projects/CG/repos/cmsgate-woocommerce-epos/browse",
+            VendorDescriptor::esas(),
+            "Выставление пользовательских счетов в ЕРИП"
+        );
     }
 }

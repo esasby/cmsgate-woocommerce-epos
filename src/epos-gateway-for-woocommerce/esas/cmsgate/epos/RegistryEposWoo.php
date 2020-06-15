@@ -64,7 +64,7 @@ class RegistryEposWoo extends RegistryEpos
     {
         return new ModuleDescriptor(
             "epos",
-            new VersionDescriptor("1.10.0", "2020-06-04"),
+            new VersionDescriptor("1.10.1", "2020-06-15"),
             "Прием платежей через ЕРИП (сервис EPOS)",
             "https://bitbucket.esas.by/projects/CG/repos/cmsgate-woocommerce-epos/browse",
             VendorDescriptor::esas(),

@@ -28,3 +28,6 @@ After invoicing you clients will be available for payment by a plastic card and 
 
 = 1.10.1 =
 * Wordpress Plugin Directory initial release
+
+= 1.10.2 =
+* Epos URL (ESAS/UPS) fix

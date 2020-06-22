@@ -25,7 +25,7 @@
     }
   ],
   "config": {
-    "vendor-dir": "src/wc-epos-gateway/vendor"
+    "vendor-dir": "src/epos-gateway-for-woocommerce/vendor"
   },
   "license": "MIT",
   "autoload": {

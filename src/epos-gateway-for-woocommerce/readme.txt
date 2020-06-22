@@ -31,3 +31,6 @@ After invoicing you clients will be available for payment by a plastic card and 
 
 = 1.10.2 =
 * Epos URL (ESAS/UPS) fix
+
+= 1.10.3 =
+* Bug fix: callback not working

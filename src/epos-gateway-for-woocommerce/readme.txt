@@ -34,3 +34,6 @@ After invoicing you clients will be available for payment by a plastic card and 
 
 = 1.10.3 =
 * Bug fix: callback not working
+
+= 1.11.0 =
+* New feature: RRB Bank EPOS processing

@@ -16,7 +16,7 @@
 
 ### Ручная установка
 1. Создайте резервную копию вашего магазина и базы данных
-1. Загрузите архив модуля [wc-epos-gateway.zip](https://bitbucket.esas.by/projects/CG/repos/cmsgate-woocommerce-epos/browse/wc-epos-gateway.zip) с помощью _Модули_ -> _Установка расширений_
+1. Загрузите архив модуля [epos-gateway-for-woocommerce.zip](https://bitbucket.org/esasby/cmsgate-woocommerce-epos/src/master/epos-gateway-for-woocommerce.zip) с помощью _Модули_ -> _Установка расширений_
 1. Через панель администратора Wordpress зайдите в меню __Плагины > Добавить новый__
 1. Нажмите __Загрузить плагин__
 1. Выберите загруженый в п2. архив модуля wc-epos-gateway.zip и установите

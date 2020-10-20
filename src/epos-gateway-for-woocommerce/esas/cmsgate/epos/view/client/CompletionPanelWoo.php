@@ -54,15 +54,13 @@ class CompletionPanelWoo extends CompletionPanelEpos
                     attribute::clazz($this->getCssClass4TabHeaderLabel()),
                     element::content($header)
                 ),
-                element::div(
-                    attribute::clazz("tab-body " . $this->getCssClass4TabBody()),
-                    element::div(
-                        attribute::id($key . "-content"),
-                        attribute::clazz("tab-body-content payment_box"),
-                        element::content($body)
-                    )
-                )
+                $this->elementTabBody($key, $body)
             )->__toString();
+    }
+
+    public function getCssClass4TabBodyContent()
+    {
+        return "payment_box";
     }
 
 

@@ -1,9 +1,9 @@
 === EPOS Gateway for WooCommerce ===
 Contributors: nmekh
 Tags: commerce, woocommerce, epos, shopping, gateway, erip, woo, wc
-Stable tag: 1.10.1
+Stable tag: 1.11.0
 Requires at least: 4.6
-Tested up to: 5.4
+Tested up to: 5.5
 Requires PHP: 5.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -37,3 +37,6 @@ After invoicing you clients will be available for payment by a plastic card and 
 
 = 1.11.0 =
 * New feature: RRB Bank EPOS processing
+
+= 1.12.0 =
+* Bug fix: iii auth problems

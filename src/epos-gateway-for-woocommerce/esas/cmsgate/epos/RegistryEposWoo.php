@@ -16,6 +16,7 @@ use esas\cmsgate\descriptors\VersionDescriptor;
 use esas\cmsgate\view\admin\AdminViewFields;
 use esas\cmsgate\view\admin\ConfigFormWoo;
 use esas\cmsgate\epos\view\client\CompletionPanelWoo;
+use esas\cmsgate\wrappers\OrderWrapper;
 
 class RegistryEposWoo extends RegistryEpos
 {
@@ -39,7 +40,11 @@ class RegistryEposWoo extends RegistryEpos
 
     public function createConfigForm()
     {
-        $managedFields = $this->getManagedFieldsFactory()->getManagedFieldsExcept(AdminViewFields::CONFIG_FORM_COMMON, [ConfigFieldsEpos::shopName()]);
+        $managedFields = $this->getManagedFieldsFactory()->getManagedFieldsExcept(AdminViewFields::CONFIG_FORM_COMMON, [
+            ConfigFieldsEpos::shopName(),
+            ConfigFieldsEpos::paymentMethodNameWebpay(),
+            ConfigFieldsEpos::paymentMethodDetailsWebpay(),
+            ConfigFieldsEpos::useOrderNumber()]);
         $configForm = new ConfigFormWoo(
             AdminViewFields::CONFIG_FORM_COMMON,
             $managedFields
@@ -54,9 +59,13 @@ class RegistryEposWoo extends RegistryEpos
         return $completionPanel;
     }
 
-    function getUrlWebpay($orderId)
+    /**
+     * @param OrderWrapper $orderWrapper
+     * @return string
+     */
+    function getUrlWebpay($orderWrapper)
     {
-        $order = wc_get_order($orderId);
+        $order = wc_get_order($orderWrapper->getOrderId());
         return $order->get_checkout_order_received_url();
     }
 
@@ -64,7 +73,7 @@ class RegistryEposWoo extends RegistryEpos
     {
         return new ModuleDescriptor(
             "epos",
-            new VersionDescriptor("1.12.0", "2020-10-20"),
+            new VersionDescriptor("1.13.0", "2020-10-20"),
             "Прием платежей через ЕРИП (сервис EPOS)",
             "https://bitbucket.esas.by/projects/CG/repos/cmsgate-woocommerce-epos/browse",
             VendorDescriptor::esas(),

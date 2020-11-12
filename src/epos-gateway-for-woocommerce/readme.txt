@@ -40,3 +40,6 @@ After invoicing you clients will be available for payment by a plastic card and 
 
 = 1.12.0 =
 * Bug fix: iii auth problems
+
+= 1.13.0 =
+* Bug fix: total amount calculation for more then 1 quantity

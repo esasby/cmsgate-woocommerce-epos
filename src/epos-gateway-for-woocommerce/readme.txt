@@ -1,7 +1,7 @@
 === EPOS Gateway for WooCommerce ===
 Contributors: nmekh
 Tags: commerce, woocommerce, epos, shopping, gateway, erip, woo, wc
-Stable tag: 1.11.0
+Stable tag: 1.13.1
 Requires at least: 4.6
 Tested up to: 5.5
 Requires PHP: 5.5

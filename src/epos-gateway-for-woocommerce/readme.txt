@@ -44,5 +44,11 @@ After invoicing you clients will be available for payment by a plastic card and 
 = 1.13.0 =
 * Bug fix: total amount calculation for more then 1 quantity
 
+= 1.13.1 =
+* Critical fix: missed files
+
 = 1.13.2 =
 * Bug fix: fullName and fullAddress correction
+
+= 1.13.3 =
+* Bug fix: fullName split

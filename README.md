@@ -53,7 +53,7 @@
 http://mydomen.my/wordpress/?wc-api=gateway_epos
 ```
 
-_Разработано и протестировано с Wordpress v5.3.2 и WooCommerce v4.0.1_
+_Разработано и протестировано с Wordpress v5.8.2 и WooCommerce v5.9.0_
 
 
 ### Файлы логов

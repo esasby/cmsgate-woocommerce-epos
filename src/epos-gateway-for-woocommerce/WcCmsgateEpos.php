@@ -2,7 +2,7 @@
 
 use esas\cmsgate\epos\controllers\ControllerEposAddInvoice;
 use esas\cmsgate\epos\controllers\ControllerEposCallback;
-use esas\cmsgate\epos\controllers\ControllerEposCompletionPage;
+use esas\cmsgate\epos\controllers\ControllerEposCompletionPanel;
 use esas\cmsgate\utils\Logger;
 use esas\cmsgate\woocommerce\WcCmsgate;
 use esas\cmsgate\wrappers\OrderWrapper;
@@ -40,7 +40,7 @@ class WcCmsgateEpos extends WcCmsgate
     function epos_thankyou_text($order_id)
     {
         try {
-            $controller = new ControllerEposCompletionPage();
+            $controller = new ControllerEposCompletionPanel();
             $completionPanel = $controller->process($order_id);
             $completionPanel->render();
         } catch (Throwable $e) {

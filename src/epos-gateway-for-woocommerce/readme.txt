@@ -55,3 +55,6 @@ After invoicing you clients will be available for payment by a plastic card and 
 
 = 1.13.4 =
 * Wordpress 5.8 compatibility
+
+= 1.14.0 =
+* QR-code with white background. Latest core update

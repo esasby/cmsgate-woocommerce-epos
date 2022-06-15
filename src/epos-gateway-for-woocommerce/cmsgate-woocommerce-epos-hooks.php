@@ -12,7 +12,7 @@ Author: ESAS
 Author Email: n.mekh@hutkigrosh.by
 Text Domain: epos-gateway-for-woocommerce
 WC requires at least: 3.0.0
-WC tested up to: 5.9.0
+WC tested up to: 6.6.0
 */
 
 // Include our Gateway Class and register Payment Gateway with WooCommerce

@@ -5,14 +5,14 @@ if (!defined('ABSPATH')) {
 }
 /*
 Plugin Name: EPOS Gateway for WooCommerce
-Plugin URI: https://bitbucket.esas.by/projects/CG/repos/cmsgate-woocommerce-epos/browse
+Plugin URI: https://github.com/esasby/cmsgate-woocommerce-epos
 Description: Модуль для выставления счетов в систему ЕРИП через сервис EPOS
-Version: 1.14.0
+Version: 2.0.0
 Author: ESAS
-Author Email: n.mekh@hutkigrosh.by
+Author Email: n.mekh@alcosi.eu
 Text Domain: epos-gateway-for-woocommerce
 WC requires at least: 3.0.0
-WC tested up to: 6.6.0
+WC tested up to: 7.7.2
 */
 
 // Include our Gateway Class and register Payment Gateway with WooCommerce

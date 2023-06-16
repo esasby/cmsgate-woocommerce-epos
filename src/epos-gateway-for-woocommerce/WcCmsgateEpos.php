@@ -42,7 +42,7 @@ class WcCmsgateEpos extends WcCmsgate
         try {
             $controller = new ControllerEposCompletionPanel();
             $completionPanel = $controller->process($order_id);
-            $completionPanel->render();
+            echo $completionPanel->build();
         } catch (Throwable $e) {
             Logger::getLogger("payment")->error("Exception:", $e);
         }

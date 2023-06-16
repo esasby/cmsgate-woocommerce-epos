@@ -6,21 +6,29 @@
  * Time: 14:11
  */
 
-namespace esas\cmsgate\epos\view\client;
+namespace esas\cmsgate\woocommerce\hro\client;
 
+use esas\cmsgate\epos\hro\client\CompletionPanelEposHRO_v1;
+use esas\cmsgate\hro\panels\MessagesPanelHROFactory;
 use esas\cmsgate\utils\htmlbuilder\Attributes as attribute;
 use esas\cmsgate\utils\htmlbuilder\Elements as element;
 
-
-class CompletionPanelWoo extends CompletionPanelEpos
+class CompletionPanelEposHRO_Woo extends CompletionPanelEposHRO_v1
 {
-    public function render()
+    public static function builder() {
+        return new CompletionPanelEposHRO_Woo();
+    }
+
+    public function build()
     {
+        if (!$this->orderCanBePayed) {
+            return MessagesPanelHROFactory::findBuilder()->build();
+        }
         $completionPanel = element::content(
             element::div(
                 attribute::id("completion-text"),
                 attribute::clazz($this->getCssClass4CompletionTextDiv()),
-                element::content($this->getCompletionText())
+                element::content($this->completionText)
             ),
             element::div(
                 attribute::id("payment"),
@@ -32,7 +40,7 @@ class CompletionPanelWoo extends CompletionPanelEpos
             ),
             $this->addCss() // CSS заданный администратором в настройках модуля
         );
-        echo $completionPanel;
+        return $completionPanel;
     }
 
     public function elementTab($key, $header, $body)
@@ -83,4 +91,5 @@ class CompletionPanelWoo extends CompletionPanelEpos
     {
         return dirname(__FILE__) . "/liCorrection.css";
     }
+
 }

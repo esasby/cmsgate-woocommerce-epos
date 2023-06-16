@@ -3,8 +3,8 @@ Contributors: nmekh
 Tags: commerce, woocommerce, epos, shopping, gateway, erip, woo, wc
 Stable tag: 1.13.4
 Requires at least: 4.6
-Tested up to: 5.8.2
-Requires PHP: 5.5
+Tested up to: 6.2.2
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,3 +58,8 @@ After invoicing you clients will be available for payment by a plastic card and 
 
 = 1.14.0 =
 * QR-code with white background. Latest core update
+
+= 1.14.0 =
+* Update to latest core version
+* Wordpress 6.2 compatibility
+* HRO support

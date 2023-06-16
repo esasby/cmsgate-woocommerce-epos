@@ -6,16 +6,20 @@
  * Time: 12:05
  */
 
-namespace esas\cmsgate\epos;
+namespace esas\cmsgate\woocommerce;
 
 
-use esas\cmsgate\CmsConnectorWoo;
 use esas\cmsgate\descriptors\ModuleDescriptor;
 use esas\cmsgate\descriptors\VendorDescriptor;
 use esas\cmsgate\descriptors\VersionDescriptor;
+use esas\cmsgate\epos\ConfigFieldsEpos;
+use esas\cmsgate\epos\hro\client\CompletionPanelEposHRO;
+use esas\cmsgate\epos\PaysystemConnectorEpos;
+use esas\cmsgate\epos\RegistryEpos;
+use esas\cmsgate\hro\HROManager;
 use esas\cmsgate\view\admin\AdminViewFields;
-use esas\cmsgate\view\admin\ConfigFormWoo;
-use esas\cmsgate\epos\view\client\CompletionPanelWoo;
+use esas\cmsgate\woocommerce\hro\client\CompletionPanelEposHRO_Woo;
+use esas\cmsgate\woocommerce\view\admin\ConfigFormWoo;
 use esas\cmsgate\wrappers\OrderWrapper;
 
 class RegistryEposWoo extends RegistryEpos
@@ -27,6 +31,12 @@ class RegistryEposWoo extends RegistryEpos
     {
         $this->cmsConnector = new CmsConnectorWoo();
         $this->paysystemConnector = new PaysystemConnectorEpos();
+    }
+
+    public function init() {
+        parent::init();
+//        $this->registerServicesFromProvider(new ServiceProviderWoo());
+        HROManager::fromRegistry()->addImplementation(CompletionPanelEposHRO::class, CompletionPanelEposHRO_Woo::class);
     }
 
     /**
@@ -53,12 +63,6 @@ class RegistryEposWoo extends RegistryEpos
         return $configForm;
     }
 
-    public function getCompletionPanel($orderWrapper)
-    {
-        $completionPanel = new CompletionPanelWoo($orderWrapper);
-        return $completionPanel;
-    }
-
     /**
      * @param OrderWrapper $orderWrapper
      * @return string
@@ -73,9 +77,9 @@ class RegistryEposWoo extends RegistryEpos
     {
         return new ModuleDescriptor(
             "epos",
-            new VersionDescriptor("1.14.0", "2022-06-14"),
+            new VersionDescriptor("2.0.0", "2023-06-14"),
             "Прием платежей через ЕРИП (сервис EPOS)",
-            "https://bitbucket.esas.by/projects/CG/repos/cmsgate-woocommerce-epos/browse",
+            "https://github.com/esasby/cmsgate-woocommerce-epos",
             VendorDescriptor::esas(),
             "Выставление пользовательских счетов в ЕРИП"
         );

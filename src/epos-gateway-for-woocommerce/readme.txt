@@ -1,7 +1,7 @@
 === EPOS Gateway for WooCommerce ===
 Contributors: nmekh
 Tags: commerce, woocommerce, epos, shopping, gateway, erip, woo, wc
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 Requires at least: 4.6
 Tested up to: 6.2.2
 Requires PHP: 7.0
@@ -66,3 +66,6 @@ After invoicing you clients will be available for payment by a plastic card and 
 
 = 2.0.2 =
 * Package import fix
+
+= 2.0.3 =
+* warnings fix

@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
 Plugin Name: EPOS Gateway for WooCommerce
 Plugin URI: https://github.com/esasby/cmsgate-woocommerce-epos
 Description: Модуль для выставления счетов в систему ЕРИП через сервис EPOS
-Version: 2.0.3
+Version: 2.0.4
 Author: ESAS
 Author Email: n.mekh@alcosi.eu
 Text Domain: epos-gateway-for-woocommerce

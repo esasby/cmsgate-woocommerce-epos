@@ -63,10 +63,84 @@ _Разработано и протестировано с Wordpress v6.0 и Woo
 
 
 ### История версий
-* v1.1.1:
-    * Исправление с включением/отключением модуля в настройках
-* v1.10.0:
-    * Исправление с автоматическим изменением статуса при оплате
-* v1.14.0:
-    * Обновление cmsgate-core до версии 1.17
-    * Белый фон для QR-code
+
+= 1.1.1 =
+
+* Bug fix: enable/disable checkbox in module settings
+
+= 1.10.0 =
+
+* Bug fix: callbacks
+
+= 1.10.1 =
+
+* Wordpress Plugin Directory initial release
+
+= 1.10.2 =
+
+* Epos URL (ESAS/UPS) fix
+
+= 1.10.3 =
+
+* Bug fix: callback not working
+
+= 1.11.0 =
+
+* New feature: RRB Bank EPOS processing
+
+= 1.12.0 =
+
+* Bug fix: iii auth problems
+
+= 1.13.0 =
+
+* Bug fix: total amount calculation for more then 1 quantity
+
+= 1.13.1 =
+
+* Critical fix: missed files
+
+= 1.13.2 =
+
+* Bug fix: fullName and fullAddress correction
+
+= 1.13.3 =
+
+* Bug fix: fullName split
+
+= 1.13.4 =
+
+* Wordpress 5.8 compatibility
+
+= 1.14.0 =
+
+* QR-code with white background. Latest core update
+
+= 2.0.0 =
+
+* Update to latest core version
+* Wordpress 6.2 compatibility
+* HRO support
+
+= 2.0.2 =
+
+* Package import fix
+
+= 2.0.3 =
+
+* warnings fix
+
+= 2.0.4 =
+
+* warnings fix
+
+= 2.0.5 =
+
+* Wordpress 6.5.2 compatibility
+* Woocommerce 8.8.2 compatibility
+
+= 2.1.1 =
+
+* WebPay to PayRaschetBy conversion
+* Use Blocks
+* Woocommerce 10 compatibility
